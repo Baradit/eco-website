@@ -1,0 +1,366 @@
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-color: #000000;
+    z-index: 1;
+
+    &::before {
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-image: url('/assets/backgrounds/hero-background.jpg');
+        background-size: cover;
+        background-position: center;
+        opacity: 0.30;
+        z-index: -1;
+    }
+    
+
+    .header {
+        height: 12%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &-logo {
+            margin-left: -23.5px;
+            width: 110px;
+            cursor: pointer;
+        }
+    
+        &-nav__links {
+            display: flex;
+            text-transform: capitalize;
+            font-size: 1.125rem;
+    
+            & li {
+                display: inline-block;
+                padding: 0 20px;
+    
+                .dropdown-icon {
+                    padding-left: 5px;
+                    transition: loading;
+    
+                    &:hover {
+                        @keyframes loading {
+                            from {
+                              opacity: 0;
+                            }
+                          
+                            to {
+                              opacity: 1;
+                            }
+                          }
+                          
+                    }
+                }
+    
+                & a {
+                    transition:  all 0.3s ease 0s;
+                }
+    
+                .water:hover {
+                    color: $blue;
+                }
+                .mold:hover {
+                    color: $green;
+                }
+                .residential:hover {
+                    color: $orange;
+                }
+                .commercial:hover {
+                    color: $violet;
+                }
+                .contact:hover {
+                    color: $blue;
+                }
+            }
+        }
+    
+        &-cta {
+            height: auto;
+            background: $green;
+    
+            i {
+                padding: 0 15px;
+            }
+    
+            &:hover {
+                transition:  all 0.7s ease 0s;
+                background: $orange;
+            }
+        }
+    }
+
+    &-content {
+        height: 70vh;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &__text {
+            width: 70%;
+
+            h1 {
+            font-size: 5rem;
+            line-height: 1;
+            width: 80%;
+            margin-bottom: 1rem;
+
+                span {
+                    color: $green;
+                }
+            }
+
+            p {
+                width: 71%;
+            }
+
+            .hero-cta {
+                margin-top: 1.5rem;
+                background: $blue;
+                position: relative;
+        
+                &:hover {
+                    transition:  all 0.7s ease 0s;
+                    background: $orange;
+                }
+                $animation-duration: 1.5s;
+                 
+                .double-pulse {
+                    position: absolute;
+                    content: '';
+                    top: -2%;
+                    left: 5%;
+                    width: 3rem;
+                    height: 3rem;
+                    margin: 0 auto;
+                    border-radius: 100%;
+                    background-color: white;
+                    opacity: .9;
+                    animation: double-pulse $animation-duration infinite ease-out;
+                    
+                    &:nth-of-type(2) {
+                    animation-delay: -350ms;
+                    }
+                }
+                 
+                @keyframes double-pulse {
+                  0% {
+                    transform: scale(0);
+                  }
+                  100% {
+                    transform: scale(1);
+                    opacity: 0;
+                  }
+                }
+
+                a {
+                    padding-left: 35px;
+                }
+
+            }
+        }
+
+        &__services{
+            width: 50%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            gap: 2rem;
+
+            & > * {
+                place-self: right;
+                height: 270px;
+                width: 270px;
+                position: relative;
+                border-radius: 25px;
+                background-color: black;
+                z-index: 1;
+                display: flex;
+                align-items: end;
+                box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+            }
+
+            .water::before, .mold::before, .residential::before, .commercial::before {
+                position: absolute;
+                content: '';
+                top: 0;
+                border-radius: 25px;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                background-size: cover;
+                background-position: center;
+                z-index: -1;
+                opacity: 0.9;
+            }
+            
+            .water::before {
+                background-image: url('/assets/services/water/hero-water.jpg');
+            }
+            .mold::before {
+                background-image: url('/assets/services/mold/hero-mold.jpg');
+            }
+            .residential::before {
+                background-image: url('/assets/services/residential/hero-kitchen.jpg');
+            }
+            .commercial::before {
+                background-image: url('/assets/services/commercial/hero-commercial.jpg');
+            }
+
+            span {
+                text-transform: uppercase;
+                font-weight: 600;
+                width: 100%;
+                padding: 10px 25px;
+                border: none;
+                border-radius: 0 0 25px 25px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                background-color: #1a1a1a;
+
+                i {
+                    cursor: pointer;
+                    transform: scale(1.2);
+
+                    &:hover {
+                        transition:  all 0.3s ease 0s;
+                    }
+                }
+
+                .water-arrow:hover{
+                    color: $blue;
+                }
+                .mold-arrow:hover{
+                    color: $green;
+                }
+                .residential-arrow:hover{
+                    color: $orange;
+                }
+                .commercial-arrow:hover{
+                    color: $violet;
+                }
+            }
+        }
+        
+
+    }
+
+}
+
+
+  
+  
+
+
+// .top-header {
+//     background-color: $darkBlueMainBackground3;
+
+//     &-content {
+//         display: flex;
+//         justify-content: space-between;
+//         align-items: center;
+
+//         .slogan {
+
+//         }
+
+//         .socials {
+//             display: flex;
+//             align-items: center;
+//             justify-content: center;
+            
+//             a {
+//                 margin: 0 .35rem;
+//                 display: flex;
+//                 justify-content: center;
+//                 align-items: center;  
+                
+//             }
+
+//             .bbb {
+//                 width: 100px;
+//                 height: 40px;
+//             }
+
+//             .homeadvisor {
+//                 width: 30px;
+//                 height: 30px;
+//                 filter:  brightness(0) invert(1);
+//             }
+
+//             i {
+//                 font-size: 22px;
+//             }
+            
+//         }
+//     }
+// }
+
+// .header {
+//     display: flex;
+//     align-items: center;
+//     justify-content: space-around;
+//     padding: 1rem;
+//     border-bottom: .1rem solid $white;
+//     // position: fixed;
+//     top: 0;
+//     left: 0;
+//     right: 0;
+//     z-index: 1000;
+
+//     &__logo {
+//         display: flex;
+//         align-items: center;
+//         img {
+//             height: 3.3rem;
+//         }
+//     }
+    
+
+//     .navbar {
+        
+//         .nav-item {
+//             margin: 0 1rem;
+//             text-transform: uppercase;
+//             font-weight: 600;
+//             color: $white;
+
+//             &:hover {
+//                 border-bottom: .2rem solid;
+//                 border-color: red;
+//                 animation-name: rgb_border;
+//                 animation-duration: 4s;
+//                 animation-iteration-count: infinite;
+
+//                 @keyframes rgb_border {
+//                     0% {
+//                       border-color: $blue;
+//                     }
+//                     25% {
+//                       border-color: $orange;
+//                     }
+//                     50% {
+//                         border-color: $green;
+//                     }
+//                     75% {
+//                         border-color: $orange;
+//                     }
+//                     100% {
+//                       border-color: $blue;
+//                     }
+
+
+//                   }
+                  
+//             }
+//         }
+//     }
+// }
